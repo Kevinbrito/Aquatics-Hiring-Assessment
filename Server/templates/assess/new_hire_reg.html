@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<body>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="alert alert-warning" role="alert">
+    <h6><span class="badge badge-warning">Notice:</span></h6>
+    <hr>
+    <h6> {{ notice }}</h6>
+</div>
+{% endif %}
+{% endwith %}
+
+<div class="card text-center mx-auto" style="width: 50%">
+    <div class="card-header bg-info" id="assessHeader">
+        <ul class="nav nav-tabs card-header-tabs">
+            <div id="assessReg">
+                <li class="nav-link text-warning active" id="registerTab">Registration</li>
+            </div>
+
+            <div id="sectionOne">
+                <li class="nav-link nav-item text-warning" id="secOneTab">Section One</li>
+            </div>
+
+            <div id="sectionTwo">
+                <li class="nav-link nav-item text-warning">Section Two</li>
+            </div>
+
+            <div id="sectionThree">
+                <li class="nav-link nav-item text-warning">Section Three</li>
+            </div>
+
+            <div id="sectionFour">
+                <li class="nav-link nav-item text-warning">Section Four</li>
+            </div>
+        </ul>
+    </div>
+
+    <div class="card-body" id="registerBody">
+        <h5 class="card-title">New Hire Registration</h5>
+        <p class="card-text"><strong>Please note:</strong> If your custom_id is not registered as LGI, you cannot
+            register a new hire.</p>
+        <form method="post">
+
+            <label for="custom_id">Assessor Custom ID:</label><br>
+            <input class="form-control mx-auto" placeholder="Custom_ID" name="custom_id" id="custom_id" required
+                   style="width: 25%"><br>
+            <label for="first_name">First Name</label><br>
+            <input class="form-control mx-auto" placeholder="First Name" name="first_name" id="first_name" required
+                   style="width: 25%"><br>
+            <label for="last_name">Last Name</label><br>
+            <input class="form-control mx-auto" placeholder="Last Name" name="last_name" id="last_name" required
+                   style="width: 25%"><br>
+            <label for="email">Email Address</label><br>
+            <input class="form-control mx-auto" type="email" placeholder="Email Address" name="email" id="email"
+                   required style="width: 25%"><br>
+            <button class="btn bg-info text-white" type="submit" value="Register New Hire">Register New Hire</button>
+            <hr>
+
+        </form>
+    </div>
+
+    <div class="card-body" id="secOneBody" style="display: none">
+        <h5 class="card-title"><strong>Section One</strong></h5>
+        <form method="post">
+            <label for="sec1_custom_id">Applicant Custom_ID</label><br>
+            <input class="form-control mx-auto" placeholder="Applicant Custom_ID" name="sec1_custom_id" id="sec1_custom_id" required
+                   style="width: 25%"><br>
+            <label for="sec1_first_name">First Name</label><br>
+            <input class="form-control mx-auto" placeholder="First Name" name="sec1_first_name" id="sec1_first_name" required
+                   style="width: 25%"><br>
+            <label for="sec1_last_name">Last Name</label><br>
+            <input class="form-control mx-auto" placeholder="Last Name" name="sec1_last_name" id="sec1_last_name" required
+                   style="width: 25%"><br>
+            <label for="sec1_points">Points</label><br>
+            <input class="form-control mx-auto" placeholder="Points" name="sec1_points" id="sec1_points" required
+                   style="width: 25%"><br>
+            <button class="btn bg-info text-white" type="submit" value="Submit Points">Submit Points</button>
+            <hr>
+
+        </form>
+    </div>
+
+</div>
+
+<script src="../../static/js/assess.js"></script>
+</body>
+
+
+{% endblock %}

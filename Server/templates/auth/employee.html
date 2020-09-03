@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block header %}
+
+<!-- Logged in -->
+
+{% if g.user %}
+<title>{% block title %}Home{% endblock %}</title>
+
+<div id="cards" class="shadow-sm p-3 mb-5 bg-white rounded">
+    <div class="card text-center shadow-sm p-3 mb-5 bg-white rounded">
+        <div class="card-header bg-info">
+            <ul class="nav nav-pills card-header-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://google.com">
+                        <button type="button" class="btn btn-light btn-sm mr-1 text-dark">Found an error? Report it!
+                        </button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">UB Aquatics Employee Schedule</h5>
+            <p class="card-text">All pool schedules can be seen by clicking below!</p>
+            <a href="#" class="btn btn-info">Master Schedule</a>
+        </div>
+    </div>
+    <br>
+    <div class="card text-center shadow-sm p-3 mb-5 bg-white rounded">
+        <div class="card-header bg-info">
+            <ul class="nav nav-pills card-header-pills">
+                <li class="nav-item">
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">University Payroll System</h5>
+            <p class="card-text">A friendly reminder to submit your pay sheet by the <strong>second Wednesday</strong>
+                of the pay period! </p>
+            <a href="https://www2.sysadm.suny.edu/hrportal/index.cfm" class="btn btn-info">UB Payroll</a>
+        </div>
+    </div>
+    <br>
+    <div class="card text-center shadow-sm p-3 mb-5 bg-white rounded">
+        <div class="card-header bg-info">
+            <ul class="nav nav-pills card-header-pills">
+                <div class="dropdown">
+                    <a class="btn btn-light text-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Courses
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" data-toggle="modal" data-target="#lifeguardCourse"
+                           href="#">Lifeguard
+                            Course</a>
+                        <a class="dropdown-item" data-toggle="modal" data-target="#cprCourse"
+                           href="#">CPR
+                            Course</a>
+                        <a class="dropdown-item" data-toggle="modal" data-target="#lifeguardReviewCourse"
+                           href="#">Lifeguard
+                            Review Course</a>
+                    </div>
+                </div>
+            </ul>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">When do your certifications expire?</h5>
+            <p class="card-text">Keep in mind that NY state mandates a CPR re-certification every year!</p>
+            <a href="#" class="btn btn-info">Employee Document Archive</a>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+
+
+
+{% endblock %}

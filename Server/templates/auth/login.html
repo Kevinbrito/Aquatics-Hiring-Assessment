@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="alert alert-warning" role="alert">
+    <h6><span class="badge badge-warning">Notice:</span></h6>
+    <hr>
+    <h6> {{ notice }}</h6>
+</div>
+{% endif %}
+{% endwith %}
+
+<div class="card text-center mx-auto" style="width: 50%">
+    <div class="card-header bg-info"><ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-link active">Current Employee</li>
+    </ul>
+    </div>
+        <div class="card-body">
+            <h5 class="card-title">Employee Login</h5>
+            <p class="card-text">Make sure you've been registered by a University employee!</p>
+            <form method="post">
+                <label for="username">Username</label><br>
+                <input placeholder="Username Required" class="form-control mx-auto" name="username" id="username" required style="width: 25%"><br>
+                <label for="password">Password</label><br>
+                <input placeholder="Password Required" class="form-control mx-auto" type="password" name="password" id="password" required style="width: 25%"><br>
+              <button type="submit" value="Log In" class="btn btn-info">Log In</button>
+            </form>
+            {% endblock %}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <title>{% block title %}{% endblock %} - UB Aquatics</title>
+</head>
+
+<div id="topNavBar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+        <img src="../static/images/ubBull.png" width="50" height="50" class="d-inline-block align-top" alt=""
+             loading="lazy"
+             style="align-self: auto">
+        <a class="navbar-brand" href="#" style="padding-left: 10px;">UB Aquatics</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <!-- Logged in -->
+            {% if g.user %}
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="../home">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{{ url_for('auth.employee') }}">Employee Page <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{{ url_for('assess.assess_reg') }}">Hiring Assessment</a>
+                <a class="nav-item nav-link" href="{{ url_for('auth.logout') }}">Log Out</a>
+            </div>
+            {% else %}
+            <!-- Not logged in -->
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="../home">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{{ url_for('auth.register') }}">Register</a>
+                <a class="nav-item nav-link" href="{{ url_for('auth.login') }}">Log In</a>
+            </div>
+            {% endif %}
+        </div>
+
+        {% if g.user %}
+        <div id="user" class="dropleft mx-auto" style="width: 100px">
+            <button id="userDropDown" class="btn btn-outline-light active"
+                    aria-haspopup="true" aria-expanded="false"> {{ g.user['username']}}
+            </button>
+        </div>
+        {% endif %}
+
+
+    </nav>
+</div>
+
+<!-- Starting Announcements -->
+<div class="alert alert-info " role="alert">
+    <h6><span class="badge badge-info">Info</span></h6>
+    <h4 class="alert-heading">Apologies!</h4>
+    <p>This website is still under construction! Sorry for the wait!</p>
+    <hr>
+    Soon you'll get to experience it in all of its glory.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<!-- Ending Announcements -->
+<body style="background: whitesmoke">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+
+
+<section class="content">
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+    {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+</section>
+
+<!-- Start Modals -->
+
+<div class="modal fade" id="lifeguardCourse" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="lifeguardCourseModalLabel">Redirection - Lifeguard Course</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                This will redirect you to the university website where more information is provided on your selected
+                course.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <a href="https://buffalo.edu/recreation/services/aquatics/lifeguard-and-instructor-courses/arc-full-lifeguard-course.html">
+                    <button type="button" class="btn btn-info">Redirect</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="cprCourse" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cprModalLabel">Redirection - CPR Course</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                This will redirect you to the university website where more information is provided on your selected
+                course.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <a href="https://buffalo.edu/recreation/services/cpr-training-american-heart-association-.html">
+                    <button type="button" class="btn btn-info">Redirect</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="lifeguardReviewCourse" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="lgrModalLabel">Redirection - Lifeguard Review Course</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                This will redirect you to the university website where more information is provided on your selected
+                course.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <a href="https://buffalo.edu/recreation/services/aquatics/lifeguard-and-instructor-courses/arc-lifeguard-review-course--recertification-.html">
+                    <button type="button" class="btn btn-info">Redirect</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End Modals -->
+
+

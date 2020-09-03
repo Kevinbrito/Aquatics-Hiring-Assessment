@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+<h1>{% block title %}Register{% endblock %}</h1>
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="alert alert-warning" role="alert">
+    <h6><span class="badge badge-warning">Notice:</span></h6>
+    <hr>
+    <h6> {{message}}Username is already registered.</h6>
+</div>
+{% endif %}
+{% endwith %}
+
+<div class="card text-center mx-auto" style="width: 50%">
+    <div class="card-header bg-info">
+        <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-link active">New Employee</li>
+        </ul>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Employee Registration</h5>
+        <p class="card-text">Registration is for <strong>current</strong> UB employees only!</p>
+        <form method="post">
+            <label for="username">Username</label><br>
+            <input class="form-control mx-auto" placeholder="Username Required" name="username" id="username" required
+                   style="width: 25%"><br>
+            <label for="password">Password</label><br>
+            <input class="form-control mx-auto" placeholder="Password Required" type="password" name="password"
+                   id="password" required style="width: 25%"><br>
+            <button class="btn btn-info" type="submit" value="Register">Register</button>
+            <br>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
