@@ -1,1 +1,1 @@
-web: kevinbrito ubaquatics.wsgi --log-file -
+web: python main.py --log-file -
