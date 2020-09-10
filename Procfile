@@ -1,1 +1,1 @@
-web: gunicorn ubaquatics:app
+web: gunicorn main:app
