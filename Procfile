@@ -1,1 +1,1 @@
-web: gunicorn ubaquatics:app --log-file=-
+web: gunicorn ubaquatics:app
