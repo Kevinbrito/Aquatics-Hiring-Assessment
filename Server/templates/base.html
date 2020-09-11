@@ -19,7 +19,7 @@
             <!-- Logged in -->
             {% if g.user %}
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="../home">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="../">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="{{ url_for('auth.employee') }}">Employee Page <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="{{ url_for('assess.assess_reg') }}">Hiring Assessment</a>
                 <a class="nav-item nav-link" href="{{ url_for('auth.logout') }}">Log Out</a>
@@ -27,7 +27,7 @@
             {% else %}
             <!-- Not logged in -->
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="../home">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="../">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="{{ url_for('auth.register') }}">Register</a>
                 <a class="nav-item nav-link" href="{{ url_for('auth.login') }}">Log In</a>
             </div>

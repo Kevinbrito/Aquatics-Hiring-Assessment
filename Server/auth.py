@@ -99,7 +99,7 @@ def login_required(view):
     return wrapped_view
 
 
-@bp.route('/home')
+@bp.route('/')
 def index():
     return render_template('index.html')
 
