@@ -6,7 +6,8 @@ The project is currently in the works, but when complete, employees are expected
 Because the website is currently being deployed by heroku, you must type ubaquatics.herokuapp.com to visit. Do not include the following:
 ```
 www
-
+http://www
+https://www
 ```
 as doing so will lead to an error.
-Or, [please click on this link](https://ubaquatics.herokuapp.com)
+Or, [please click on this link!](https://ubaquatics.herokuapp.com)
