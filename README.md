@@ -12,3 +12,11 @@ https://www
 as doing so will lead to an error.
 <br>
 Or, [please click on this link!](https://ubaquatics.herokuapp.com)
+<br />
+## Registration
+Instead of registering, let's keep the database clean by using our guest account with limited features! This only serves the purpose of allowing users to see what employees see.
+```
+Username: guest
+Password: ubaquatics
+```
+Please, keep in mind that the username is case sensitive!
