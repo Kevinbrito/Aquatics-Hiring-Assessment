@@ -14,7 +14,6 @@ as doing so will lead to an error.
 Or, [please click on this link!](https://ubaquatics.herokuapp.com)
 <h4>It may take a few minutes to load due to the way heroku servers load.</h4>
 <br />
-
 ## Registration
 Instead of registering, let's keep the database clean by using our guest account with limited features! This only serves the purpose of allowing users to see what employees see.
 ```
